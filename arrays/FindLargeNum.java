@@ -1,3 +1,4 @@
+// Use Priority Queue  / K max value / dynamic 
 class FindLargeNum {
     
     public static int findKLargest(int[] array, int k) {
