@@ -35,15 +35,16 @@ class FibonacciSeries {
     }
 
     static int printFibonacciRecursive(int n, int num1,int num2) {
-       int num3 = num1 + num2;
+       int sum  = num1 + num2;
         num1 = num2;
-        num2 = num3;
+        num2 = sum;
         n--;
-        if ( n== 0) return num3;
+        if ( n== 0) return sum;
 
-        System.out.println(num3);
+        System.out.println(sum);
         return printFibonacciRecursive(n,num1, num2);
     }
+
     public static void main(String arg[]) {
         System.out.println( " Enter a Number to Find Fibonaccis Number : ");
         Scanner scan = new Scanner(System.in);
@@ -61,8 +62,8 @@ class FibonacciSeries {
         System.out.println( " Try Recursive Method Short: ");
         int input3 = scan.nextInt();
         // int result3 = printFibonacciRecursiveShort(input3);
-        for (int i =0; i < input3 ; i++ ) {
-            System.out.print(printFibonacciRecursiveShort (i) + " " );
-         }
+        //for (int i =0; i < input3 ; i++ ) {
+            System.out.print(printFibonacciRecursiveShort(input3) + " " );
+         //}
     }
 }
