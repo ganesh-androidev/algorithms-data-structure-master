@@ -44,7 +44,7 @@ class MergeSortedArrays {
             temp = mergedArray[j];
             mergedArray[j] = mergedArray[j+1];
             mergedArray[j+1] = temp;
-            j = -1;
+            j = 0;
         }
     }
 
