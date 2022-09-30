@@ -43,13 +43,43 @@ public class LongestPalinSubstring {
     return maxLength;
        
  }
- 
+
+    private static void printLongestPaliSubString(String str) {
+        int length = str.length();
+        char[] c = new char[length];
+        String result= "";
+        int resultLength = 0;
+
+        for(int i=0; i< length; i++) {
+            for(int j = length-1; j>1 ;j--) {
+            System.out.println(" c[i] = "+ str.charAt(i) + " c[j] = " + str.charAt(j) + "resultLength : " +resultLength);
+                if (str.charAt(i) == str.charAt(j)) {
+                    result = str.substring(i,j+1);
+                    resultLength = Math.max(result.length(),resultLength);
+                    System.out.println( "Result Substring : " + resultLength);
+                    boolean isPali = isPalindrome(result);
+                    System.out.println( "is Palindrom  " + isPali);
+                    break;
+                }
+            }
+        }
+
+
+        System.out.println("Longest Pali Substring is : " +result + " Length" + resultLength);
+    }
+
+    private static boolean isPalindrome(String s) {
+        System.out.println(" Do Palindrome >> " +s);
+            if (s.length() <= 2) return false;
+        return new StringBuilder(s).reverse().toString().equals(s);
+    }
     // Driver program to test above function
     public static void main(String[] args)
     {
  
-        String str = "afternoontime";
-        System.out.println("Length is: "
-                           + longestPalSubstr(str));
+        String str = "rnononontasat";
+//        System.out.println("Length is: "
+  //                         + longestPalSubstr(str));
+        printLongestPaliSubString(str);
     }
 }

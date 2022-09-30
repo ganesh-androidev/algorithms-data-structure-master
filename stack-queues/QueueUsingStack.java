@@ -7,20 +7,24 @@ class QueueUsingStack {
     static Stack<Integer> stack2 = new Stack<Integer>();
 
     static void enQueue(int x) {
-      System.out.println("Do enQueue ..."); 
+      System.out.println("****** ENTER Do enQueue ...******"); 
        // Move elements from stack1 to stack2
        while (!stack1.isEmpty()) {
+           System.out.println("stack1 Copy to Stack2 --> Peer  "+ stack1.peek());
             stack2.push(stack1.pop());
        }
 
+     System.out.println("stack1 before MAIN push  >> . "+ stack1.size());
       // Push element
        stack1.push(x);
        
 
        while (!stack2.isEmpty()) {
+           System.out.println("stack2 Copy to Stack1 --> Peer  "+ stack2.peek());
             stack1.push(stack2.pop());
        }
-      System.out.println("[" + stack1.peek() + "]");
+     System.out.println("stack1 AFTER final pop  >> . "+ stack1.size());
+      System.out.println("####### END [" + stack1.peek() + "] #######");
     }
 
     static int deQueue() {
